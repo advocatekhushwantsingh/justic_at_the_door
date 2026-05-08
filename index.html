@@ -705,6 +705,74 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
     }, { passive: true });
   }
 </script>
+
+<!-- WhatsApp Floating Button -->
+<style>
+.wa-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+.wa-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: wa-pulse 2.5s infinite;
+}
+.wa-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+}
+.wa-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+.wa-tooltip {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.wa-float:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
+  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.75), 0 0 0 8px rgba(37,211,102,0.12); }
+}
+</style>
+
+<div class="wa-float">
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+  <a class="wa-btn" href="https://wa.me/919430237432?text=Hello%2C%20I%20need%20legal%20consultation." target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.736 5.464 2.023 7.754L0 32l8.463-2.001A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.2a13.14 13.14 0 01-6.7-1.834l-.48-.285-4.97 1.174 1.197-4.842-.314-.497A13.14 13.14 0 012.8 16C2.8 8.712 8.712 2.8 16 2.8S29.2 8.712 29.2 16 23.288 29.2 16 29.2zm7.2-9.86c-.394-.197-2.328-1.148-2.69-1.278-.363-.13-.627-.197-.891.197-.264.394-1.02 1.278-1.251 1.54-.23.262-.46.295-.854.098-.394-.197-1.664-.614-3.17-1.957-1.172-1.045-1.963-2.337-2.193-2.731-.23-.394-.025-.607.173-.803.177-.176.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.492-.033-.69-.099-.197-.891-2.148-1.22-2.94-.322-.772-.65-.667-.891-.68l-.757-.013c-.263 0-.69.098-1.052.492s-1.38 1.35-1.38 3.29 1.414 3.818 1.611 4.082c.197.263 2.782 4.248 6.74 5.956.942.407 1.677.65 2.25.832.945.3 1.806.258 2.487.156.759-.113 2.328-.952 2.657-1.872.329-.92.329-1.708.23-1.872-.098-.164-.362-.263-.756-.46z"/>
+    </svg>
+  </a>
+</div>
+
 </body>
 </html>
-
