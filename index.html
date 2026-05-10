@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta name="google-site-verification" content="za5J1OV3SAhvhLVDWsUAOM0mEfpd-Zsg_pEDe3BQDho" />
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adv. Khushwant Singh | Criminal Defence Lawyer – Patna High Court</title>
@@ -8,21 +8,21 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --gold:#FFFFFF;
-  --gold-light:#CCCCCC;
-  --dark:#0D0D0D;
-  --dark2:#161616;
-  --dark3:#1F1F1F;
-  --dark4:#2A2A2A;
-  --text:#E8E4DC;
-  --muted:#8A8478;
-  --border:rgba(255,255,255,0.2);
+  --gold:#1A1A1A;
+  --gold-light:#333333;
+  --dark:#FFFFFF;
+  --dark2:#F4F4F4;
+  --dark3:#EBEBEB;
+  --dark4:#E0E0E0;
+  --text:#1A1A1A;
+  --muted:#555555;
+  --border:rgba(201,168,76,0.2);
 }
 html{scroll-behavior:smooth;}
 body{background:var(--dark);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 5%;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1.4rem 5%;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;letter-spacing:0.05em;color:var(--gold);white-space:nowrap;}
 .nav-logo span{color:var(--text);font-style:italic;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
@@ -39,7 +39,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px);}
 
 /* MOBILE MENU */
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(13,13,13,0.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(255,255,255,0.98);z-index:150;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--text);text-decoration:none;letter-spacing:0.05em;transition:color 0.3s;}
 .mobile-menu a:active{color:var(--gold);}
@@ -59,9 +59,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 .btn-primary:hover{background:var(--gold-light);}
 .btn-ghost{color:var(--text);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:0.5rem;transition:color 0.3s;}
 .btn-ghost:hover{color:var(--gold);}
-.hero-right{position:relative;overflow:hidden;background:#0D0D0D;}
+.hero-right{position:relative;overflow:hidden;background:#FFFFFF;}
 .hero-right video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;object-fit:cover;z-index:0;}
-.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0D0D0D 0%,transparent 45%);z-index:1;pointer-events:none;}
+.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#FFFFFF 0%,transparent 45%);z-index:1;pointer-events:none;}
 .hero-right::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.45);z-index:1;pointer-events:none;}
 .hero-stats{position:absolute;bottom:3.5rem;left:8%;z-index:3;display:flex;gap:2.5rem;}
 .stat{border-left:1px solid var(--border);padding-left:1rem;}
@@ -202,7 +202,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
     top:0!important;
     left:0!important;
   }
-  .hero-right::before{background:rgba(13,13,13,0.72)!important;z-index:1;}
+  .hero-right::before{background:rgba(255,255,255,0.72)!important;z-index:1;}
   .hero-right::after{display:none!important;}
   .hero-left{position:relative;z-index:2;padding:6rem 5% 1rem;flex:none;}
   .hero-title{font-size:2.6rem;}
@@ -307,6 +307,112 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
 </style>
 </head>
 <body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-icon">⚖</div>
+    <div class="loader-text">
+      <span class="word">Justice</span><span class="underscore">_</span><span class="word">at</span><span class="underscore">_</span><span class="word">the</span><span class="underscore">_</span><span class="word">door</span>
+    </div>
+    <div class="loader-line"><div class="loader-progress"></div></div>
+    <div class="loader-sub">Adv. Khushwant Singh • Patna High Court</div>
+  </div>
+</div>
+
+<style>
+#loader{
+  position:fixed;inset:0;background:#fff;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  transition:opacity 0.7s ease, visibility 0.7s ease;
+}
+#loader.hide{opacity:0;visibility:hidden;}
+.loader-inner{text-align:center;}
+
+.loader-icon{
+  font-size:3.5rem;color:#1A1A1A;
+  animation:scalePulse 1.4s ease-in-out infinite;
+  display:block;margin-bottom:1.5rem;
+}
+@keyframes scalePulse{
+  0%,100%{transform:scale(1);opacity:1;}
+  50%{transform:scale(1.15);opacity:0.7;}
+}
+
+.loader-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.6rem,4vw,3rem);
+  font-weight:600;
+  letter-spacing:0.04em;
+  color:#1A1A1A;
+  display:flex;align-items:center;gap:0;
+  margin-bottom:2rem;
+  overflow:hidden;
+}
+.word{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(30px);
+  animation:wordUp 0.6s forwards;
+}
+.word:nth-child(1){animation-delay:0.2s;}
+.word:nth-child(3){animation-delay:0.55s;}
+.word:nth-child(5){animation-delay:0.9s;}
+.word:nth-child(7){animation-delay:1.25s;}
+
+.underscore{
+  font-family:'Jost',sans-serif;
+  font-size:clamp(1.4rem,3.5vw,2.7rem);
+  color:#1A1A1A;
+  opacity:0;
+  animation:fadeIn 0.3s forwards;
+}
+.underscore:nth-child(2){animation-delay:0.5s;}
+.underscore:nth-child(4){animation-delay:0.85s;}
+.underscore:nth-child(6){animation-delay:1.2s;}
+
+@keyframes wordUp{
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeIn{
+  to{opacity:1;}
+}
+
+.loader-line{
+  width:220px;height:1px;background:#e0e0e0;
+  margin:0 auto 1.2rem;position:relative;overflow:hidden;
+}
+.loader-progress{
+  position:absolute;left:0;top:0;height:100%;width:0;
+  background:#1A1A1A;
+  animation:progressBar 2.2s ease forwards;
+  animation-delay:0.2s;
+}
+@keyframes progressBar{
+  to{width:100%;}
+}
+
+.loader-sub{
+  font-family:'Jost',sans-serif;
+  font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:#999;
+  opacity:0;
+  animation:fadeIn 0.6s forwards;
+  animation-delay:1.6s;
+}
+</style>
+
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.getElementById('loader').classList.add('hide');
+    setTimeout(function(){
+      document.getElementById('loader').style.display = 'none';
+    }, 700);
+  }, 2800);
+});
+</script>
 
 <!-- NAV -->
 <nav>
@@ -434,7 +540,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
         <li class="appt-step"><div class="appt-step-num">1</div><div class="appt-step-text"><strong>Pick a Date &amp; Time</strong><span>Select from available slots on the right</span></div></li>
         <li class="appt-step"><div class="appt-step-num">2</div><div class="appt-step-text"><strong>Fill Your Details</strong><span>Name, phone number, and brief matter</span></div></li>
         <li class="appt-step"><div class="appt-step-num">3</div><div class="appt-step-text"><strong>Receive Confirmation</strong><span>Confirmed via WhatsApp within 2 hours</span></div></li>
-        <li class="appt-step"><div class="appt-step-num">4</div><div class="appt-step-text"><strong>Meet at Chamber</strong><span>Gola Road, Panchshil Nagar, Lane 3, Patna – 801503</span></div></li>
+        <li class="appt-step"><div class="appt-step-num">4</div><div class="appt-step-text"><strong>Meet at Chamber</strong><span>Patna High Court premises, Patna – 800001</span></div></li>
       </ul>
     </div>
     <div class="appt-box">
@@ -494,7 +600,7 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
       <p class="section-label">Contact</p>
       <h2 class="section-title">Get in Touch Directly</h2>
       <p class="contact-desc">Initial consultation is confidential and obligation-free. Speak directly with Advocate Khushwant Singh about your matter.</p>
-      <div class="contact-detail"><span class="contact-icon">📍</span><div class="contact-detail-text"><strong>Chamber Address</strong>Gola Road, Panchshil Nagar,<br>Lane 3, Patna – 801503</div></div>
+      <div class="contact-detail"><span class="contact-icon">📍</span><div class="contact-detail-text"><strong>Chamber Address</strong>Gola Road, Panchshil Nagar Lane 3,<br>Patna – 801503</div></div>
       <div class="contact-detail"><span class="contact-icon">📞</span><div class="contact-detail-text"><strong>Phone / WhatsApp</strong>+91 94302 37432</div></div>
       <div class="contact-detail"><span class="contact-icon">✉</span><div class="contact-detail-text"><strong>Email</strong>Adv.khushwant24@gmail.com</div></div>
       <div class="contact-detail"><span class="contact-icon">🕒</span><div class="contact-detail-text"><strong>Hours</strong>Mon–Sat: 9:30am – 5:00pm<br>Emergency line available 24/7</div></div>
@@ -706,73 +812,129 @@ footer{background:var(--dark2);border-top:1px solid var(--border);padding:4rem 8
   }
 </script>
 
-<!-- WhatsApp Floating Button -->
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/919430237432" target="_blank" id="wa-float" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.472 2.027 7.774L.069 31.08a1 1 0 0 0 1.214 1.214l7.306-1.957A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z" fill="#25D366"/>
+    <path d="M23.507 19.62c-.355-.178-2.1-1.036-2.424-1.154-.324-.118-.56-.178-.796.178-.237.355-.914 1.154-1.12 1.39-.207.237-.414.266-.77.089-.355-.178-1.5-.553-2.858-1.763-1.056-.943-1.769-2.107-1.976-2.462-.207-.355-.022-.547.155-.724.16-.159.355-.414.533-.621.178-.207.237-.355.355-.592.118-.237.06-.444-.03-.621-.088-.178-.796-1.918-1.09-2.626-.287-.69-.578-.596-.796-.607-.207-.01-.444-.012-.68-.012-.237 0-.621.089-.946.444-.325.355-1.24 1.212-1.24 2.955 0 1.744 1.27 3.428 1.447 3.665.178.237 2.5 3.815 6.057 5.35.847.365 1.508.583 2.023.747.85.27 1.622.232 2.233.14.681-.101 2.1-.858 2.396-1.687.296-.83.296-1.542.207-1.69-.089-.149-.325-.237-.68-.415z" fill="#fff"/>
+  </svg>
+</a>
 <style>
-.wa-float {
-  position: fixed;
-  bottom: 2rem;
-  right: 1.5rem;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.6rem;
+#wa-float{
+  position:fixed;bottom:2rem;right:2rem;z-index:9990;
+  width:58px;height:58px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(37,211,102,0.45);
+  transition:transform 0.25s ease,box-shadow 0.25s ease;
+  text-decoration:none;
+  animation:waPulse 2.5s ease-in-out infinite;
 }
-.wa-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  background: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-  animation: wa-pulse 2.5s infinite;
+#wa-float:hover{
+  transform:scale(1.12);
+  box-shadow:0 6px 24px rgba(37,211,102,0.65);
 }
-.wa-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+#wa-float svg{width:100%;height:100%;}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 16px rgba(37,211,102,0.45);}
+  50%{box-shadow:0 4px 28px rgba(37,211,102,0.75),0 0 0 8px rgba(37,211,102,0.12);}
 }
-.wa-btn svg {
-  width: 32px;
-  height: 32px;
-  fill: white;
+</style>
+<div id="cursor-glow"></div>
+<style>
+#cursor-glow{
+  position:fixed;
+  width:320px;height:320px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:99998;
+  transform:translate(-50%,-50%) scale(0);
+  background:radial-gradient(circle, rgba(0,0,0,0.07) 0%, rgba(0,0,0,0.03) 40%, transparent 70%);
+  transition:transform 0.18s cubic-bezier(0.23,1,0.32,1), opacity 0.18s;
+  opacity:0;
+  will-change:transform,left,top;
 }
-.wa-tooltip {
-  background: #1a1a1a;
-  color: #fff;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  padding: 0.45rem 0.9rem;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.25s, transform 0.25s;
-  pointer-events: none;
-  border: 1px solid rgba(255,255,255,0.1);
+#cursor-glow.active{
+  transform:translate(-50%,-50%) scale(1);
+  opacity:1;
 }
-.wa-float:hover .wa-tooltip {
-  opacity: 1;
-  transform: translateX(0);
+
+/* Ripple burst on click/tap */
+.ripple-burst{
+  position:fixed;
+  width:60px;height:60px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:99997;
+  background:transparent;
+  border:1.5px solid rgba(0,0,0,0.18);
+  transform:translate(-50%,-50%) scale(0);
+  animation:rippleBurst 0.65s ease-out forwards;
 }
-@keyframes wa-pulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-  50% { box-shadow: 0 4px 30px rgba(37,211,102,0.75), 0 0 0 8px rgba(37,211,102,0.12); }
+.ripple-burst.r2{
+  animation-delay:0.1s;
+  border-color:rgba(0,0,0,0.10);
+  width:100px;height:100px;
+}
+@keyframes rippleBurst{
+  0%  {transform:translate(-50%,-50%) scale(0);opacity:1;}
+  100%{transform:translate(-50%,-50%) scale(3);opacity:0;}
 }
 </style>
 
-<div class="wa-float">
-  <span class="wa-tooltip">Chat on WhatsApp</span>
-  <a class="wa-btn" href="https://wa.me/919430237432?text=Hello%2C%20I%20need%20legal%20consultation." target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-      <path d="M16 0C7.163 0 0 7.163 0 16c0 2.82.736 5.464 2.023 7.754L0 32l8.463-2.001A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.2a13.14 13.14 0 01-6.7-1.834l-.48-.285-4.97 1.174 1.197-4.842-.314-.497A13.14 13.14 0 012.8 16C2.8 8.712 8.712 2.8 16 2.8S29.2 8.712 29.2 16 23.288 29.2 16 29.2zm7.2-9.86c-.394-.197-2.328-1.148-2.69-1.278-.363-.13-.627-.197-.891.197-.264.394-1.02 1.278-1.251 1.54-.23.262-.46.295-.854.098-.394-.197-1.664-.614-3.17-1.957-1.172-1.045-1.963-2.337-2.193-2.731-.23-.394-.025-.607.173-.803.177-.176.394-.46.591-.69.197-.23.263-.394.394-.657.131-.263.066-.492-.033-.69-.099-.197-.891-2.148-1.22-2.94-.322-.772-.65-.667-.891-.68l-.757-.013c-.263 0-.69.098-1.052.492s-1.38 1.35-1.38 3.29 1.414 3.818 1.611 4.082c.197.263 2.782 4.248 6.74 5.956.942.407 1.677.65 2.25.832.945.3 1.806.258 2.487.156.759-.113 2.328-.952 2.657-1.872.329-.92.329-1.708.23-1.872-.098-.164-.362-.263-.756-.46z"/>
-    </svg>
-  </a>
-</div>
+<script>
+(function(){
+  const glow = document.getElementById('cursor-glow');
+  let glowX = 0, glowY = 0, rafId;
 
+  function moveGlow(x, y){
+    glow.style.left = x + 'px';
+    glow.style.top  = y + 'px';
+  }
+
+  // MOUSE
+  document.addEventListener('mousemove', function(e){
+    glowX = e.clientX; glowY = e.clientY;
+    glow.classList.add('active');
+    moveGlow(glowX, glowY);
+  });
+  document.addEventListener('mouseleave', function(){
+    glow.classList.remove('active');
+  });
+
+  // TOUCH — moves glow on drag
+  document.addEventListener('touchmove', function(e){
+    const t = e.touches[0];
+    glowX = t.clientX; glowY = t.clientY;
+    glow.classList.add('active');
+    moveGlow(glowX, glowY);
+  }, {passive:true});
+  document.addEventListener('touchend', function(){
+    setTimeout(function(){ glow.classList.remove('active'); }, 400);
+  });
+
+  // RIPPLE on click / tap
+  function spawnRipple(x, y){
+    ['', 'r2'].forEach(function(cls){
+      const r = document.createElement('div');
+      r.className = 'ripple-burst ' + cls;
+      r.style.left = x + 'px';
+      r.style.top  = y + 'px';
+      document.body.appendChild(r);
+      r.addEventListener('animationend', function(){ r.remove(); });
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    spawnRipple(e.clientX, e.clientY);
+  });
+  document.addEventListener('touchstart', function(e){
+    const t = e.touches[0];
+    glowX = t.clientX; glowY = t.clientY;
+    glow.classList.add('active');
+    moveGlow(glowX, glowY);
+    spawnRipple(t.clientX, t.clientY);
+  }, {passive:true});
+})();
+</script>
 </body>
 </html>
