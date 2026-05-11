@@ -540,7 +540,7 @@ window.addEventListener('load', function() {
         <li class="appt-step"><div class="appt-step-num">1</div><div class="appt-step-text"><strong>Pick a Date &amp; Time</strong><span>Select from available slots on the right</span></div></li>
         <li class="appt-step"><div class="appt-step-num">2</div><div class="appt-step-text"><strong>Fill Your Details</strong><span>Name, phone number, and brief matter</span></div></li>
         <li class="appt-step"><div class="appt-step-num">3</div><div class="appt-step-text"><strong>Receive Confirmation</strong><span>Confirmed via WhatsApp within 2 hours</span></div></li>
-        <li class="appt-step"><div class="appt-step-num">4</div><div class="appt-step-text"><strong>Meet at Chamber</strong><span>Patna High Court premises, Patna – 800001</span></div></li>
+        <li class="appt-step"><div class="appt-step-num">4</div><div class="appt-step-text"><strong>Meet at Chamber</strong><span>Gola Road, Panchshil Nagar Lane 3, Patna – 801503</span></div></li>
       </ul>
     </div>
     <div class="appt-box">
@@ -723,27 +723,31 @@ window.addEventListener('load', function() {
         emailSent = res.ok;
       } catch(e) {}
     }
-    const waMsg = encodeURIComponent(`*New Appointment — Website*
-───────────────────────
-👤 ${name}
-📞 ${phone}
-📅 ${formattedDate}
-🕐 ${selectedSlot}
-⚖️ ${matter}
-📝 ${note||'No note'}
-───────────────────────`);
+    const waMsg = encodeURIComponent(
+`*New Appointment Request — Website*
+─────────────────────────
+👤 Name: ${name}
+📞 Phone: ${phone}
+📅 Date: ${formattedDate}
+🕐 Time: ${selectedSlot}
+⚖️ Matter: ${matter}
+📝 Note: ${note||'No note'}
+─────────────────────────`);
     const waURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`;
+
+    // Auto open WhatsApp
+    window.open(waURL, '_blank');
+
     document.getElementById('appt-form-wrap').style.display = 'none';
     const success = document.getElementById('appt-success');
     success.style.display = 'block';
     success.innerHTML = `
       <div class="tick">✓</div>
       <h3>Appointment Requested!</h3>
-      <p><strong style="color:var(--gold)">${name}</strong> — ${matter}</p>
+      <p><strong>${name}</strong> — ${matter}</p>
       <p style="margin-top:0.4rem;color:var(--muted);font-size:0.85rem">${formattedDate} | ${selectedSlot}</p>
-      ${FORMSPREE_ID !== 'YOUR_FORMSPREE_ID' ? `<p style="margin-top:0.8rem;font-size:0.85rem">${emailSent ? '✅ Email sent to Adv.khushwant24@gmail.com' : '⚠️ Email failed — check Formspree ID'}</p>` : ''}
-      <p style="margin-top:1rem;font-size:0.85rem;color:var(--muted)">WhatsApp pe confirm karein:</p>
-      <a href="${waURL}" target="_blank" style="display:inline-block;margin-top:0.8rem;background:var(--gold);color:var(--dark);padding:0.75rem 1.8rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;">📲 Send on WhatsApp →</a>
+      <p style="margin-top:1rem;font-size:0.82rem;color:var(--muted)">WhatsApp automatically khul gaya hoga.<br>Agar nahi khula toh neeche click karein:</p>
+      <a href="${waURL}" target="_blank" style="display:inline-block;margin-top:0.8rem;background:#25D366;color:#fff;padding:0.75rem 1.8rem;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;font-weight:500;border-radius:2px;">📲 Open WhatsApp →</a>
     `;
   }
 
